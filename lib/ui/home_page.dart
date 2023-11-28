@@ -12,7 +12,7 @@ import 'widgets/error_widget.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +36,8 @@ class HomePage extends StatelessWidget {
                   return const DownloadIndicator(style: indicator.list);
                 case const (NewsFetchingState):
                   return const DownloadIndicator(style: indicator.list);
-                case const (NextNewsFetchingState):
-                case const (NewsFetchedState):
+                case const (NextNewsFetchingState)||
+                     const (NewsFetchedState):
                   return ArticlesList(articles: bloc.articles);
                 case const (NewsErrorState):
                   return ErrorNewsWidget(

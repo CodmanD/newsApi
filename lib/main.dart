@@ -33,6 +33,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:news/ui/app.dart';
 
+
+///Файл .env не закинул в .gitignore чтобы была возможность поменять ключи и сбилдить проект
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: '.env');
