@@ -23,6 +23,8 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
         if (null != response && response.status == 'ok') {
           articles = response.articles ?? articles;
           emit(NewsFetchedState(articles: articles));
+        } else {
+          emit(NewsErrorState(errorMessage: "server error"));
         }
       } catch (exception) {
         emit(NewsErrorState(errorMessage: "undefined error"));
@@ -38,9 +40,11 @@ class NewsBloc extends Bloc<NewsEvent, NewsState> {
         } else if (articles.isNotEmpty) {
           emit(NewsFetchedState(articles: articles));
         } else {
+          numberPage--;
           emit(NewsErrorState(errorMessage: "server error"));
         }
       } catch (ex) {
+        numberPage--;
         if (articles.isNotEmpty) {
           emit(NewsFetchedState(articles: articles));
         } else {
