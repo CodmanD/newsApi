@@ -8,12 +8,12 @@ workflows:
       xcode: latest
       cocoapods: default
       vars:
-        XCODE_WORKSPACE: "Runner.xcworkspace"
-        XCODE_SCHEME: "Runner"
+        PACKAGE_NAME: "com.kodman.news"
+        GOOGLE_PLAY_TRACK: "alpha"
     scripts:
-      - name: Build ipa for distribution
+      - name: Flutter build ipa
         script: |
-          xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
+            flutter build ipa --release
     # Add scripts here
     artifacts:
       - build/**/outputs/**/*.apk
