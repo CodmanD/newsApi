@@ -8,6 +8,9 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
+      - name: Build ipa for distribution
+          script: |
+            xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME"
     # Add scripts here
     artifacts:
       - build/**/outputs/**/*.apk
