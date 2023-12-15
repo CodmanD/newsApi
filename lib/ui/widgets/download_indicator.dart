@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-enum indicator { web, list, image, nextPage }
+enum Indicator { web, list, image, nextPage }
 
 class DownloadIndicator extends StatelessWidget {
   const DownloadIndicator({super.key, required this.style});
 
-  final indicator style;
+  final Indicator style;
 
   @override
   Widget build(BuildContext context) {
     switch (style) {
-      case indicator.list:
+      case Indicator.list:
         return Shimmer.fromColors(
 
             baseColor: Colors.grey.shade400,
@@ -29,7 +29,7 @@ class DownloadIndicator extends StatelessWidget {
                 },
               ),
             ));
-      case indicator.web:
+      case Indicator.web:
         return Shimmer.fromColors(
           baseColor: Colors.grey.shade400,
           highlightColor: Colors.grey.shade100,
@@ -37,13 +37,13 @@ class DownloadIndicator extends StatelessWidget {
               elevation: 1.0,
               child: SizedBox(height: double.infinity, width: double.infinity)),
         );
-      case indicator.image:
+      case Indicator.image:
         return Shimmer.fromColors(
           baseColor: Colors.grey.shade300,
           highlightColor: Colors.grey.shade100,
           child: const Card(elevation: 1.0, child: SizedBox(height: 30, width: 60)),
         );
-      case indicator.nextPage:
+      case Indicator.nextPage:
         return const CircularProgressIndicator();
       default:
         return const CircularProgressIndicator();

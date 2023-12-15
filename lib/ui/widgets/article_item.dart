@@ -32,7 +32,7 @@ class ArticleItem extends StatelessWidget {
                           return __;
                         } else {
                           return const DownloadIndicator(
-                            style: indicator.image,
+                            style: Indicator.image,
                           );
                         }
                       },

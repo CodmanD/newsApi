@@ -33,9 +33,9 @@ class HomePage extends StatelessWidget {
               switch (state.runtimeType) {
                 case const (NewsInitialState):
                   context.read<NewsBloc>().add(NewsFetchEvent());
-                  return const DownloadIndicator(style: indicator.list);
+                  return const DownloadIndicator(style: Indicator.list);
                 case const (NewsFetchingState):
-                  return const DownloadIndicator(style: indicator.list);
+                  return const DownloadIndicator(style: Indicator.list);
                 case const (NextNewsFetchingState)||
                      const (NewsFetchedState):
                   return ArticlesList(articles: bloc.articles);

@@ -46,7 +46,7 @@ class _ArticlePageState extends State<ArticlePage> {
             backgroundColor: ThemeData.light().colorScheme.background,
           ),
           body: isLoaded
-              ?const DownloadIndicator(style: indicator.web)
+              ?const DownloadIndicator(style: Indicator.web)
               : WebViewWidget(
                   controller: _controller,
                 )),

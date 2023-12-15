@@ -51,7 +51,7 @@ class _ArticlesListState extends State<ArticlesList> {
                           index == widget.articles.length - 1)
                       ? Column(children: [
                           ArticleItem(article: widget.articles[index]),
-                          const DownloadIndicator(style: indicator.nextPage)
+                          const DownloadIndicator(style: Indicator.nextPage)
                         ])
                       : ArticleItem(article: widget.articles[index]);
                 },
