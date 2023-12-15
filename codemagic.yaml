@@ -13,7 +13,7 @@ workflows:
     scripts:
       - name: Flutter build ipa
         script: |
-            flutter build ipa --release
+            flutter build ipa --debug
     # Add scripts here
     artifacts:
       - build/**/outputs/**/*.apk
